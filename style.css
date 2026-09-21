@@ -1,0 +1,2874 @@
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    overflow: hidden;
+
+    background: #fff8f7;
+
+    color: #292426;
+}
+
+
+/* =====================================================
+   SCREEN SYSTEM
+===================================================== */
+
+.screen {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    display: none;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    padding:
+        55px 24px;
+
+    background: #fff8f7;
+
+    opacity: 0;
+
+    transform:
+        translateX(45px);
+}
+
+.screen.active {
+    display: flex;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    opacity: 1;
+
+    transform:
+        translateX(0);
+
+    animation:
+        screenEnter
+        0.65s ease;
+}
+
+@keyframes screenEnter {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateX(45px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateX(0);
+    }
+
+}
+
+.screen-content {
+    width: 100%;
+
+    max-width: 1050px;
+
+    margin: auto;
+
+    padding:
+        30px 0 70px;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   TYPOGRAPHY
+===================================================== */
+
+h1 {
+    font-size:
+        clamp(
+            55px,
+            8vw,
+            90px
+        );
+
+    line-height: 1.1;
+}
+
+h2 {
+    margin-bottom: 35px;
+
+    font-size:
+        clamp(
+            38px,
+            6vw,
+            60px
+        );
+
+    line-height: 1.2;
+}
+
+h3 {
+    line-height: 1.4;
+}
+
+.mini-title,
+.year-label {
+    margin-bottom: 25px;
+
+    color: #8f1d35;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 5px;
+}
+
+.big-text {
+    max-width: 700px;
+
+    margin:
+        30px auto 18px;
+
+    color: #626262;
+
+    font-size: 21px;
+
+    line-height: 1.8;
+}
+
+.soft-intro {
+    max-width: 650px;
+
+    margin:
+        0 auto 35px;
+
+    color: #8f1d35;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+.normal-text {
+    max-width: 760px;
+
+    margin:
+        35px auto 45px;
+
+    color: #666;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   DAYLIGHT HINT
+===================================================== */
+
+.daylight-hint {
+    margin:
+        5px auto 20px;
+
+    color: #b58b42;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 21px;
+
+    font-style: italic;
+
+    animation:
+        daylightHint
+        3s ease-in-out infinite;
+}
+
+@keyframes daylightHint {
+
+    50% {
+        text-shadow:
+            0 0 18px
+            rgba(
+                255,
+                207,
+                100,
+                0.55
+            );
+    }
+
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+button {
+    font-family: inherit;
+}
+
+.main-button,
+.white-button {
+    padding:
+        17px 32px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.main-button {
+    background: #8f1d35;
+
+    color: white;
+}
+
+.white-button {
+    background: white;
+
+    color: #8f1d35;
+}
+
+.main-button:hover,
+.white-button:hover {
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(
+            0,
+            0,
+            0,
+            0.16
+        );
+}
+
+.back-button {
+    padding:
+        15px 28px;
+
+    border:
+        1px solid #d9b4bd;
+
+    border-radius: 50px;
+
+    background: transparent;
+
+    color: #8f1d35;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.navigation {
+    width: 100%;
+
+    margin-top: 55px;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 18px;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero-screen {
+    background:
+        radial-gradient(
+            circle at top,
+            #ffffff 0%,
+            #fff8f7 45%,
+            #f8e1e7 100%
+        );
+}
+
+.hero-screen.active {
+    align-items: center;
+}
+
+.hero-screen h1 {
+    color: #8f1d35;
+}
+
+
+/* =====================================================
+   DISTANCE
+===================================================== */
+
+.distance-screen {
+    background:
+        linear-gradient(
+            180deg,
+            #fffafa,
+            #fff6f7
+        );
+}
+
+.distance-heading {
+    max-width: 1100px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    font-size:
+        clamp(
+            42px,
+            6vw,
+            72px
+        );
+}
+
+.distance-wrapper {
+    max-width: 950px;
+
+    margin:
+        60px auto;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 50px;
+}
+
+.location-card {
+    width: 300px;
+
+    min-height: 330px;
+
+    padding: 35px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    background: white;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 20px 55px
+        rgba(
+            55,
+            30,
+            35,
+            0.09
+        );
+}
+
+.country-code {
+    margin-bottom: 25px;
+
+    font-size: 48px;
+
+    font-weight: 500;
+
+    letter-spacing: 3px;
+}
+
+.location-card h3 {
+    margin-bottom: 10px;
+
+    font-size: 29px;
+}
+
+.location-card strong {
+    margin-bottom: 20px;
+
+    color: #8f1d35;
+}
+
+.location-card p {
+    max-width: 220px;
+
+    color: #666;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+.distance-connection {
+    min-width: 180px;
+}
+
+.connection-heart {
+    margin-bottom: 25px;
+
+    font-size: 34px;
+
+    animation:
+        heartbeat
+        2s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform:
+            scale(1);
+    }
+
+    15% {
+        transform:
+            scale(1.13);
+    }
+
+    30% {
+        transform:
+            scale(1);
+    }
+
+    42% {
+        transform:
+            scale(1.08);
+    }
+
+    55% {
+        transform:
+            scale(1);
+    }
+
+}
+
+.flight-route {
+    position: relative;
+
+    width: 180px;
+
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.route-line {
+    width: 135px;
+
+    border-top:
+        2px dashed #c98d9a;
+}
+
+.route-dot {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #8f1d35;
+}
+
+.plane {
+    position: absolute;
+
+    left: 4px;
+    top: 6px;
+
+    font-size: 29px;
+
+    animation:
+        planeFly
+        4.5s ease-in-out infinite;
+}
+
+@keyframes planeFly {
+
+    from {
+        left: 2px;
+
+        transform:
+            translateY(4px);
+    }
+
+    50% {
+        transform:
+            translateY(-5px);
+    }
+
+    to {
+        left: 145px;
+
+        transform:
+            translateY(3px);
+    }
+
+}
+
+.distance-connection > p {
+    margin-top: 15px;
+
+    color: #999;
+
+    font-style: italic;
+}
+
+.distance-message {
+    max-width: 700px;
+
+    margin:
+        20px auto 0;
+}
+
+.distance-message p {
+    margin:
+        10px 0;
+
+    color: #666;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+.distance-message h3 {
+    margin:
+        15px 0;
+
+    color: #8f1d35;
+
+    font-size: 27px;
+}
+
+.proposal-trigger {
+    background:
+        linear-gradient(
+            135deg,
+            #8f1d35,
+            #b9435e
+        );
+}
+
+
+/* =====================================================
+   PROPOSAL BACKGROUND
+===================================================== */
+
+.proposal-screen {
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 50% -10%,
+            #a84b61 0%,
+            #742338 42%,
+            #49101f 72%,
+            #2a0710 100%
+        );
+}
+
+.proposal-screen.active {
+    align-items: center;
+}
+
+.proposal-container {
+    max-width: 900px;
+}
+
+.proposal-small {
+    margin-bottom: 30px;
+
+    font-size: 13px;
+
+    letter-spacing: 6px;
+
+    opacity: 0.8;
+}
+
+.proposal-intro-text {
+    max-width: 650px;
+
+    margin:
+        13px auto;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.88
+        );
+
+    font-size: 18px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   CINEMATIC PROPOSAL STAGE
+===================================================== */
+
+.proposal-stage {
+    position: relative;
+
+    width: 360px;
+
+    height: 320px;
+
+    margin:
+        30px auto 10px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    perspective: 1400px;
+}
+
+.stage-glow {
+    position: absolute;
+
+    width: 250px;
+    height: 170px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(
+                235,
+                175,
+                152,
+                0.20
+            ),
+            transparent 70%
+        );
+
+    filter:
+        blur(15px);
+
+    opacity: 0.4;
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease;
+}
+
+.proposal-stage:has(.ring-box.open)
+.stage-glow {
+    opacity: 1;
+
+    transform:
+        scale(1.25);
+}
+
+
+/* =====================================================
+   RING BOX
+===================================================== */
+
+.ring-box {
+    position: relative;
+
+    width: 205px;
+
+    height: 175px;
+
+    z-index: 5;
+
+    transform-style: preserve-3d;
+
+    transform:
+        rotateX(5deg)
+        translateY(5px);
+
+    transition:
+        transform 1.1s
+        cubic-bezier(
+            0.2,
+            0.8,
+            0.2,
+            1
+        );
+}
+
+.ring-box.open {
+    transform:
+        rotateX(0deg)
+        translateY(-12px)
+        scale(1.04);
+}
+
+
+/* BASE */
+
+.ring-box-base {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 205px;
+    height: 110px;
+
+    border-radius:
+        25px 25px 34px 34px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #8e1d39 0%,
+            #5e1023 48%,
+            #2f0710 100%
+        );
+
+    box-shadow:
+        inset 0 4px 8px
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        ),
+        inset 0 -14px 20px
+        rgba(
+            0,
+            0,
+            0,
+            0.35
+        ),
+        0 25px 45px
+        rgba(
+            0,
+            0,
+            0,
+            0.36
+        );
+}
+
+
+/* CUSHION */
+
+.ring-box-cushion {
+    position: absolute;
+
+    inset:
+        13px 14px;
+
+    overflow: visible;
+
+    border-radius: 22px;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            #7b1a32 0%,
+            #4d0b1b 58%,
+            #25040c 100%
+        );
+
+    box-shadow:
+        inset 0 10px 20px
+        rgba(
+            255,
+            255,
+            255,
+            0.035
+        ),
+        inset 0 -12px 20px
+        rgba(
+            0,
+            0,
+            0,
+            0.55
+        );
+}
+
+
+/* LID */
+
+.ring-box-lid {
+    position: absolute;
+
+    left: 4px;
+    top: 3px;
+
+    width: 197px;
+
+    height: 108px;
+
+    z-index: 10;
+
+    transform-origin:
+        center bottom;
+
+    transform-style: preserve-3d;
+
+    transition:
+        transform 1.7s
+        cubic-bezier(
+            0.18,
+            0.75,
+            0.18,
+            1
+        );
+}
+
+.ring-box.open
+.ring-box-lid {
+    transform:
+        translateY(-5px)
+        rotateX(-118deg);
+}
+
+.ring-box-lid-outer {
+    position: absolute;
+
+    inset: 0;
+
+    border-radius:
+        29px 29px 20px 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #9c2442 0%,
+            #671226 50%,
+            #380812 100%
+        );
+
+    box-shadow:
+        inset 0 4px 10px
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        ),
+        0 12px 30px
+        rgba(
+            0,
+            0,
+            0,
+            0.34
+        );
+}
+
+.ring-box-lid-inner {
+    position: absolute;
+
+    inset: 12px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 20px;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            #4a0c1b 0%,
+            #22040a 78%
+        );
+
+    box-shadow:
+        inset 0 0 24px
+        rgba(
+            0,
+            0,
+            0,
+            0.75
+        );
+
+    transform:
+        translateZ(2px);
+}
+
+.lid-symbol {
+    color:
+        rgba(
+            255,
+            237,
+            231,
+            0.72
+        );
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 29px;
+
+    opacity: 0;
+
+    transform:
+        scale(0.6);
+
+    transition:
+        opacity 0.9s ease 0.7s,
+        transform 0.9s ease 0.7s;
+}
+
+.ring-box.open
+.lid-symbol {
+    opacity: 1;
+
+    transform:
+        scale(1);
+}
+
+
+/* =====================================================
+   RING HOLDER
+===================================================== */
+
+.ring-holder {
+    position: absolute;
+
+    left: 50%;
+    bottom: 2px;
+
+    width: 125px;
+
+    height: 50px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            ellipse,
+            #180307 0%,
+            #2f0710 55%,
+            #150205 100%
+        );
+
+    box-shadow:
+        inset 0 9px 16px
+        rgba(
+            0,
+            0,
+            0,
+            0.75
+        );
+}
+
+
+/* =====================================================
+   PROPOSAL RING
+===================================================== */
+
+.proposal-ring {
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    width: 84px;
+    height: 110px;
+
+    opacity: 0;
+
+    transform:
+        translateX(-50%)
+        translateY(32px)
+        scale(0.72)
+        rotate(-4deg);
+
+    transition:
+        opacity 0.8s ease 0.75s,
+        transform 1.25s
+        cubic-bezier(
+            0.16,
+            0.85,
+            0.2,
+            1
+        )
+        0.65s;
+}
+
+.ring-box.open
+.proposal-ring {
+    opacity: 1;
+
+    transform:
+        translateX(-50%)
+        translateY(-31px)
+        scale(1)
+        rotate(0deg);
+}
+
+
+/* BAND */
+
+.proposal-band {
+    position: absolute;
+
+    left: 13px;
+    bottom: 0;
+
+    width: 58px;
+    height: 69px;
+
+    border:
+        7px solid #e4c263;
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    box-shadow:
+        inset 3px 2px 4px
+        rgba(
+            255,
+            255,
+            255,
+            0.70
+        ),
+        inset -3px -2px 4px
+        rgba(
+            110,
+            72,
+            20,
+            0.45
+        ),
+        0 7px 12px
+        rgba(
+            0,
+            0,
+            0,
+            0.35
+        );
+}
+
+
+/* PRONG */
+
+.proposal-prong {
+    position: absolute;
+
+    top: 31px;
+    left: 33px;
+
+    width: 19px;
+    height: 19px;
+
+    z-index: 3;
+
+    border-radius:
+        4px 4px 8px 8px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f1d981,
+            #b99035
+        );
+}
+
+
+/* DIAMOND */
+
+.proposal-diamond {
+    position: absolute;
+
+    top: 1px;
+    left: 25px;
+
+    width: 36px;
+    height: 36px;
+
+    z-index: 5;
+
+    clip-path:
+        polygon(
+            50% 0%,
+            88% 25%,
+            100% 55%,
+            50% 100%,
+            0% 55%,
+            12% 25%
+        );
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff 0%,
+            #d5effc 23%,
+            #ffffff 42%,
+            #a9d6e7 67%,
+            #ffffff 100%
+        );
+
+    box-shadow:
+        0 0 15px
+        rgba(
+            255,
+            255,
+            255,
+            0.85
+        );
+
+    animation:
+        diamondBreath
+        3.3s ease-in-out infinite;
+}
+
+@keyframes diamondBreath {
+
+    0%,
+    70%,
+    100% {
+        filter:
+            brightness(1);
+    }
+
+    77% {
+        filter:
+            brightness(2);
+    }
+
+    82% {
+        filter:
+            brightness(1.1);
+    }
+
+}
+
+
+/* DIAMOND FACETS */
+
+.diamond-face {
+    position: absolute;
+
+    display: block;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.35
+        );
+}
+
+.face-one {
+    left: 50%;
+    top: 0;
+
+    width: 1px;
+    height: 100%;
+}
+
+.face-two {
+    top: 43%;
+    left: 8%;
+
+    width: 84%;
+    height: 1px;
+}
+
+.face-three {
+    left: 25%;
+    top: 20%;
+
+    width: 50%;
+    height: 1px;
+
+    transform:
+        rotate(45deg);
+}
+
+
+/* =====================================================
+   SPARKLES
+===================================================== */
+
+.sparkle {
+    position: absolute;
+
+    z-index: 8;
+
+    color: white;
+
+    font-size: 16px;
+
+    opacity: 0;
+}
+
+.ring-box.open
+.sparkle {
+    animation:
+        sparkleMoment
+        1.8s ease-in-out
+        1.5s infinite;
+}
+
+.sparkle-one {
+    left: 4px;
+    top: -5px;
+}
+
+.sparkle-two {
+    right: 5px;
+    top: 13px;
+
+    animation-delay:
+        1.8s !important;
+}
+
+.sparkle-three {
+    right: 15px;
+    top: -15px;
+
+    animation-delay:
+        2.2s !important;
+}
+
+@keyframes sparkleMoment {
+
+    0%,
+    100% {
+        opacity: 0;
+
+        transform:
+            scale(0.4)
+            rotate(0deg);
+    }
+
+    45% {
+        opacity: 1;
+
+        transform:
+            scale(1.1)
+            rotate(25deg);
+    }
+
+    65% {
+        opacity: 0;
+
+        transform:
+            scale(0.7)
+            rotate(45deg);
+    }
+
+}
+
+
+/* =====================================================
+   BOX SHADOW
+===================================================== */
+
+.box-floor-shadow {
+    position: absolute;
+
+    bottom: 53px;
+
+    width: 220px;
+
+    height: 34px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(
+            0,
+            0,
+            0,
+            0.32
+        );
+
+    filter:
+        blur(16px);
+
+    transition:
+        transform 1.2s ease,
+        opacity 1.2s ease;
+}
+
+.proposal-stage:has(.ring-box.open)
+.box-floor-shadow {
+    opacity: 0.65;
+
+    transform:
+        scaleX(1.18);
+}
+
+
+/* CLOSED BOX MOVEMENT */
+
+.ring-box:not(.open) {
+    animation:
+        closedBoxFloat
+        4.5s ease-in-out infinite;
+}
+
+@keyframes closedBoxFloat {
+
+    0%,
+    100% {
+        transform:
+            rotateX(5deg)
+            translateY(5px);
+    }
+
+    50% {
+        transform:
+            rotateX(3deg)
+            translateY(-2px);
+    }
+
+}
+
+.ring-note {
+    max-width: 550px;
+
+    margin:
+        0 auto 30px;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.78
+        );
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   ACTUAL PROPOSAL
+===================================================== */
+
+.actual-proposal {
+    display: none;
+}
+
+.actual-proposal.show {
+    display: block;
+
+    animation:
+        proposalReveal
+        1.25s ease;
+}
+
+@keyframes proposalReveal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px)
+            scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+.proposal-ring-icon {
+    margin-bottom: 10px;
+
+    font-size: 78px;
+
+    animation:
+        proposalRingFloat
+        3s ease-in-out infinite;
+}
+
+@keyframes proposalRingFloat {
+
+    50% {
+        transform:
+            translateY(-7px)
+            rotate(5deg);
+    }
+
+}
+
+.proposal-main-question {
+    margin-top: 5px;
+
+    font-size:
+        clamp(
+            54px,
+            8vw,
+            88px
+        );
+}
+
+.proposal-heart {
+    margin: 15px;
+
+    font-size: 40px;
+}
+
+.proposal-copy {
+    max-width: 700px;
+
+    margin:
+        16px auto;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.88
+        );
+
+    font-size: 18px;
+
+    line-height: 1.75;
+}
+
+.future-date-card {
+    max-width: 590px;
+
+    margin:
+        35px auto;
+
+    padding: 30px;
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.17
+        );
+
+    border-radius: 25px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.09
+        );
+
+    backdrop-filter:
+        blur(7px);
+}
+
+.date-label {
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    opacity: 0.7;
+}
+
+.future-date-card h3 {
+    margin:
+        14px;
+
+    font-size: 36px;
+}
+
+.future-date-card span {
+    display: block;
+
+    margin-bottom: 20px;
+}
+
+.date-description {
+    line-height: 1.7;
+
+    opacity: 0.85;
+}
+
+.proposal-final-question {
+    max-width: 650px;
+
+    margin:
+        35px auto;
+
+    font-size: 26px;
+
+    line-height: 1.5;
+}
+
+.proposal-choice {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+}
+
+.proposal-choice button {
+    min-width: 230px;
+
+    padding:
+        17px 25px;
+
+    border-radius: 50px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.proposal-choice button:hover {
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 15px 35px
+        rgba(
+            0,
+            0,
+            0,
+            0.2
+        );
+}
+
+.proposal-yes {
+    border: none;
+
+    background: white;
+
+    color: #8f1d35;
+}
+
+.proposal-talk {
+    border:
+        2px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.9
+        );
+
+    background: transparent;
+
+    color: white;
+}
+
+
+/* =====================================================
+   PROPOSAL RESULT
+===================================================== */
+
+.proposal-result {
+    display: none;
+}
+
+.proposal-result.show {
+    display: block;
+
+    animation:
+        proposalReveal
+        1s ease;
+}
+
+.result-ring,
+.result-heart {
+    margin-bottom: 20px;
+
+    font-size: 85px;
+}
+
+.proposal-result > p {
+    max-width: 700px;
+
+    margin:
+        18px auto;
+
+    font-size: 18px;
+
+    line-height: 1.75;
+}
+
+.marriage-roadmap {
+    max-width: 700px;
+
+    margin:
+        40px auto;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 30px;
+}
+
+.marriage-roadmap
+> div:not(.road-arrow) {
+    width: 260px;
+
+    padding:
+        30px 20px;
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.15
+        );
+
+    border-radius: 22px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.1
+        );
+}
+
+.marriage-roadmap span {
+    font-size: 40px;
+}
+
+.marriage-roadmap h3 {
+    margin:
+        15px 0;
+
+    font-size: 24px;
+}
+
+.marriage-roadmap p {
+    line-height: 1.6;
+
+    opacity: 0.85;
+}
+
+.road-arrow {
+    font-size: 35px;
+}
+
+
+/* =====================================================
+   YEAR SCREENS
+===================================================== */
+
+.year-screen,
+.wedding-screen,
+.freedom-screen {
+    background:
+        linear-gradient(
+            180deg,
+            #fffafa,
+            #fff4f5
+        );
+}
+
+.big-emoji {
+    margin-bottom: 15px;
+
+    font-size: 55px;
+}
+
+.plan-card {
+    max-width: 760px;
+
+    margin:
+        35px auto;
+
+    padding:
+        35px 40px;
+
+    border-radius: 28px;
+
+    background: white;
+
+    text-align: left;
+
+    box-shadow:
+        0 15px 45px
+        rgba(
+            0,
+            0,
+            0,
+            0.07
+        );
+}
+
+.plan-card p {
+    margin:
+        18px 0;
+
+    color: #5e5e5e;
+
+    font-size: 17px;
+
+    line-height: 1.65;
+}
+
+.highlight-plan {
+    padding: 18px;
+
+    border-radius: 15px;
+
+    background:
+        #fff1f4;
+
+    color:
+        #8f1d35 !important;
+
+    font-weight: bold;
+}
+
+.quote {
+    max-width: 700px;
+
+    margin:
+        40px auto 0;
+
+    color: #8f1d35;
+
+    font-size: 20px;
+
+    font-style: italic;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   WEDDING
+===================================================== */
+
+.wedding-card {
+    max-width: 700px;
+
+    margin:
+        20px auto 40px;
+
+    padding: 40px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #8f1d35,
+            #b84861
+        );
+
+    color: white;
+
+    box-shadow:
+        0 18px 45px
+        rgba(
+            143,
+            29,
+            53,
+            0.2
+        );
+}
+
+.wedding-ring-row {
+    margin-bottom: 15px;
+
+    font-size: 42px;
+}
+
+.wedding-card h3 {
+    margin-bottom: 20px;
+
+    font-size: 28px;
+}
+
+.wedding-card p {
+    margin:
+        12px 0;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   FREEDOM
+===================================================== */
+
+.freedom-grid {
+    max-width: 900px;
+
+    margin:
+        50px auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            1fr
+        );
+
+    gap: 25px;
+}
+
+.freedom-card {
+    padding: 35px;
+
+    border-radius: 25px;
+
+    background: white;
+
+    font-size: 40px;
+
+    box-shadow:
+        0 12px 35px
+        rgba(
+            0,
+            0,
+            0,
+            0.06
+        );
+}
+
+.freedom-card h3 {
+    margin:
+        15px 0;
+
+    font-size: 22px;
+}
+
+.freedom-card p {
+    color: #666;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   WHY US — LOVE
+===================================================== */
+
+.why-us-screen {
+    background:
+        linear-gradient(
+            180deg,
+            #fff9f9,
+            #fff2f4
+        );
+}
+
+.why-us-intro {
+    max-width: 720px;
+
+    margin:
+        0 auto 45px;
+
+    color: #666;
+
+    font-size: 19px;
+
+    line-height: 1.8;
+}
+
+.love-grid {
+    max-width: 950px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            1fr
+        );
+
+    gap: 22px;
+}
+
+.love-card {
+    padding:
+        38px 30px;
+
+    border-radius: 26px;
+
+    background: white;
+
+    box-shadow:
+        0 15px 38px
+        rgba(
+            70,
+            35,
+            40,
+            0.065
+        );
+}
+
+.love-card > span {
+    display: block;
+
+    margin-bottom: 15px;
+
+    font-size: 42px;
+}
+
+.love-card h3 {
+    margin-bottom: 14px;
+
+    color: #8f1d35;
+
+    font-size: 22px;
+}
+
+.love-card p {
+    color: #666;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+.why-us-message {
+    max-width: 750px;
+
+    margin:
+        55px auto 0;
+
+    padding:
+        35px;
+
+    border:
+        1px solid #eed0d7;
+
+    border-radius: 28px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.75
+        );
+}
+
+.why-us-message p {
+    margin-bottom: 15px;
+
+    color: #777;
+
+    font-size: 17px;
+}
+
+.why-us-message h3 {
+    color: #8f1d35;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 26px;
+
+    font-style: italic;
+
+    font-weight: normal;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   LITTLE THINGS
+===================================================== */
+
+.little-grid {
+    max-width: 950px;
+
+    margin:
+        45px auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            1fr
+        );
+
+    gap: 20px;
+}
+
+.little-card {
+    padding:
+        30px 20px;
+
+    border-radius: 24px;
+
+    background: white;
+
+    font-size: 38px;
+
+    box-shadow:
+        0 12px 35px
+        rgba(
+            0,
+            0,
+            0,
+            0.05
+        );
+}
+
+.little-card h3 {
+    margin-top: 15px;
+
+    font-size: 18px;
+}
+
+
+/* =====================================================
+   LOVE LETTER
+===================================================== */
+
+.letter-screen {
+    background:
+        linear-gradient(
+            180deg,
+            #fff8f7,
+            white
+        );
+}
+
+.letter {
+    display: none;
+
+    max-width: 750px;
+
+    margin:
+        45px auto 0;
+
+    padding: 45px;
+
+    border-radius: 25px;
+
+    background: white;
+
+    text-align: left;
+
+    box-shadow:
+        0 20px 50px
+        rgba(
+            0,
+            0,
+            0,
+            0.09
+        );
+}
+
+.letter.show {
+    display: block;
+
+    animation:
+        letterOpen
+        0.7s ease;
+}
+
+@keyframes letterOpen {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+    }
+
+}
+
+.letter h3 {
+    margin-bottom: 20px;
+
+    color: #8f1d35;
+}
+
+.letter p {
+    margin:
+        20px 0;
+
+    color: #555;
+
+    font-size: 17px;
+
+    line-height: 1.85;
+}
+
+.letter-highlight {
+    margin:
+        30px 0 !important;
+
+    padding: 22px;
+
+    border-top:
+        1px solid #ead0d6;
+
+    border-bottom:
+        1px solid #ead0d6;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   FINAL QUESTION
+===================================================== */
+
+.final-question-screen {
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #ad455d,
+            #8f273d 55%,
+            #731a2f
+        );
+}
+
+.final-question-heading {
+    font-size:
+        clamp(
+            52px,
+            8vw,
+            84px
+        );
+}
+
+.dream-list {
+    margin:
+        45px 0;
+}
+
+.dream-list p {
+    margin: 8px;
+
+    font-size: 20px;
+}
+
+.final-question-message {
+    margin:
+        40px 0;
+
+    font-size: 25px;
+}
+
+.final-answer-box {
+    max-width: 600px;
+
+    margin: auto;
+
+    padding: 30px;
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.15
+        );
+
+    border-radius: 25px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+}
+
+.final-answer-box > p {
+    margin-bottom: 22px;
+
+    font-size: 13px;
+
+    letter-spacing: 5px;
+}
+
+.final-yes-button {
+    width: 100%;
+
+    padding: 17px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background: white;
+
+    color: #8f1d35;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.proposal-back {
+    margin-top: 25px;
+
+    border: none;
+
+    background: transparent;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.7
+        );
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   FINAL SCREEN
+===================================================== */
+
+.final-screen {
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #b7465f,
+            #8f273d 50%,
+            #6c162b
+        );
+}
+
+.thank-you {
+    margin-bottom: 25px;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(
+            52px,
+            8vw,
+            90px
+        );
+
+    font-style: italic;
+}
+
+.thank-text {
+    margin-bottom: 35px;
+
+    font-size: 20px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   DAYLIGHT
+===================================================== */
+
+.daylight-section {
+    width: 100%;
+
+    max-width: 700px;
+
+    margin:
+        20px auto 55px;
+
+    padding:
+        40px 35px;
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.14
+        );
+
+    border-radius: 32px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+
+    backdrop-filter:
+        blur(10px);
+}
+
+.sun-glow {
+    margin-bottom: 14px;
+
+    font-size: 58px;
+
+    animation:
+        sunGlow
+        3s ease-in-out infinite;
+}
+
+@keyframes sunGlow {
+
+    50% {
+        transform:
+            scale(1.08);
+
+        filter:
+            drop-shadow(
+                0 0 20px
+                rgba(
+                    255,
+                    220,
+                    110,
+                    0.9
+                )
+            );
+    }
+
+}
+
+.daylight-small {
+    margin-bottom: 15px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 5px;
+
+    opacity: 0.72;
+}
+
+.daylight-section h2 {
+    margin-bottom: 15px;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(
+            40px,
+            6vw,
+            58px
+        );
+
+    font-style: italic;
+
+    font-weight: normal;
+}
+
+.daylight-message {
+    max-width: 520px;
+
+    margin:
+        0 auto 30px;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    opacity: 0.88;
+}
+
+
+/* =====================================================
+   SPOTIFY
+===================================================== */
+
+.spotify-player {
+    width: 100%;
+
+    margin:
+        25px auto 0;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 20px 50px
+        rgba(
+            0,
+            0,
+            0,
+            0.25
+        );
+}
+
+.spotify-player iframe {
+    display: block;
+
+    width: 100%;
+
+    border: none;
+}
+
+
+/* =====================================================
+   FINAL ROADMAP
+===================================================== */
+
+.chapter-card {
+    max-width: 1000px;
+
+    margin: auto;
+
+    padding:
+        40px 25px;
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.15
+        );
+
+    border-radius: 28px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.1
+        );
+}
+
+.light-title {
+    color: white;
+}
+
+.chapter-path {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+}
+
+.chapter-path div {
+    flex: 1;
+}
+
+.chapter-path span {
+    font-size: 35px;
+}
+
+.chapter-path h4 {
+    margin:
+        12px 0 6px;
+
+    font-size: 16px;
+}
+
+.chapter-path p {
+    font-size: 13px;
+
+    opacity: 0.75;
+}
+
+.chapter-path b {
+    font-size: 30px;
+
+    opacity: 0.5;
+}
+
+.final-words {
+    margin:
+        45px 0 25px;
+}
+
+.final-words p {
+    font-size: 20px;
+
+    letter-spacing: 3px;
+}
+
+.final-words h3 {
+    margin-top: 10px;
+
+    font-size: 25px;
+
+    line-height: 1.6;
+}
+
+.final-promise {
+    display: none;
+
+    max-width: 700px;
+
+    margin:
+        45px auto;
+
+    padding-top: 35px;
+
+    border-top:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.3
+        );
+}
+
+.final-promise.show {
+    display: block;
+
+    animation:
+        letterOpen
+        0.8s ease;
+}
+
+.final-promise p {
+    margin-bottom: 15px;
+
+    opacity: 0.75;
+}
+
+.final-promise h3 {
+    font-size: 26px;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   FLOATING HEARTS
+===================================================== */
+
+.floating-heart {
+    position: absolute;
+
+    color:
+        rgba(
+            255,
+            180,
+            195,
+            0.5
+        );
+
+    font-size: 30px;
+
+    animation:
+        floatingHeart
+        4s ease-in-out infinite;
+}
+
+.heart1 {
+    left: 7%;
+    top: 10%;
+}
+
+.heart2 {
+    right: 7%;
+    top: 18%;
+}
+
+.heart3 {
+    left: 10%;
+    bottom: 15%;
+}
+
+.heart4 {
+    right: 10%;
+    bottom: 10%;
+}
+
+@keyframes floatingHeart {
+
+    50% {
+        transform:
+            translateY(-20px);
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .screen {
+        padding:
+            28px 18px;
+    }
+
+    .screen-content {
+        padding:
+            30px 0 85px;
+    }
+
+    h2 {
+        font-size: 34px;
+    }
+
+
+    /* NAV */
+
+    .navigation {
+        flex-direction:
+            column-reverse;
+
+        align-items: center;
+    }
+
+    .navigation button {
+        width: 100%;
+
+        max-width: 350px;
+    }
+
+
+    /* DISTANCE */
+
+    .distance-wrapper {
+        flex-direction: column;
+
+        gap: 25px;
+    }
+
+    .location-card {
+        width: 100%;
+
+        max-width: 340px;
+    }
+
+    .distance-connection {
+        margin:
+            10px 0 25px;
+
+        transform:
+            rotate(90deg);
+    }
+
+    .connection-heart,
+    .distance-connection > p {
+        transform:
+            rotate(-90deg);
+    }
+
+
+    /* PROPOSAL */
+
+    .proposal-stage {
+        width: 290px;
+
+        height: 290px;
+    }
+
+    .ring-box {
+        transform:
+            scale(0.88);
+    }
+
+    .ring-box.open {
+        transform:
+            translateY(-10px)
+            scale(0.92);
+    }
+
+    .proposal-choice {
+        flex-direction: column;
+    }
+
+    .proposal-choice button {
+        width: 100%;
+    }
+
+    .marriage-roadmap {
+        flex-direction: column;
+    }
+
+    .road-arrow {
+        transform:
+            rotate(90deg);
+    }
+
+
+    /* PLANS */
+
+    .plan-card {
+        padding:
+            28px 22px;
+    }
+
+
+    /* FREEDOM */
+
+    .freedom-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* WHY US */
+
+    .love-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* LITTLE */
+
+    .little-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* LETTER */
+
+    .letter {
+        padding:
+            30px 22px;
+    }
+
+
+    /* DAYLIGHT */
+
+    .daylight-section {
+        padding:
+            30px 17px;
+    }
+
+    .spotify-player iframe {
+        height: 352px;
+    }
+
+
+    /* FINAL */
+
+    .chapter-path {
+        flex-direction: column;
+
+        gap: 18px;
+    }
+
+    .chapter-path b {
+        transform:
+            rotate(90deg);
+    }
+
+}
+
+
+/* =====================================================
+   SMALL PHONES
+===================================================== */
+
+@media (max-width: 400px) {
+
+    h1 {
+        font-size: 44px;
+    }
+
+    .mini-title,
+    .year-label {
+        letter-spacing: 3px;
+    }
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.01ms !important;
+    }
+
+}
